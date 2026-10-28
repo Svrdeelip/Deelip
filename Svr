@@ -1,0 +1,624 @@
+index.html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>SVR EdTech | Education & Learning</title>
+
+    <meta name="description"
+          content="Explore SVR EdTech, its educational services, learning opportunities, and career development programs.">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        :root {
+            --primary: #5b4bdb;
+            --secondary: #13b8a6;
+            --dark: #172033;
+            --light: #f6f7ff;
+            --text: #596579;
+            --white: #ffffff;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            color: var(--dark);
+            line-height: 1.7;
+            background: var(--white);
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 18px 8%;
+            background: white;
+            box-shadow: 0 2px 15px #17203312;
+        }
+
+        .logo {
+            font-size: 25px;
+            font-weight: 800;
+            color: var(--primary);
+        }
+
+        .logo span {
+            color: var(--secondary);
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+            gap: 24px;
+        }
+
+        nav a {
+            color: var(--text);
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        nav a:hover {
+            color: var(--primary);
+        }
+
+        .hero {
+            min-height: 590px;
+            padding: 100px 8%;
+            display: flex;
+            align-items: center;
+            background: linear-gradient(135deg, #f3f0ff, #e8fffb);
+        }
+
+        .hero-content {
+            max-width: 760px;
+        }
+
+        .tag {
+            display: inline-block;
+            padding: 7px 16px;
+            border-radius: 30px;
+            background: #e5e0ff;
+            color: var(--primary);
+            font-size: 13px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            font-size: clamp(38px, 6vw, 65px);
+            line-height: 1.15;
+            margin-bottom: 22px;
+        }
+
+        h1 span {
+            color: var(--primary);
+        }
+
+        .hero p {
+            color: var(--text);
+            font-size: 18px;
+            max-width: 650px;
+            margin-bottom: 30px;
+        }
+
+        .button {
+            display: inline-block;
+            padding: 13px 24px;
+            border-radius: 8px;
+            background: var(--primary);
+            color: white;
+            font-weight: bold;
+            margin: 5px 8px 5px 0;
+            transition: 0.3s;
+            border: none;
+            cursor: pointer;
+        }
+
+        .button:hover {
+            transform: translateY(-3px);
+            opacity: 0.9;
+        }
+
+        .button-outline {
+            background: white;
+            color: var(--primary);
+            border: 1px solid var(--primary);
+        }
+
+        section {
+            padding: 80px 8%;
+            scroll-margin-top: 75px;
+        }
+
+        .section-heading {
+            text-align: center;
+            font-size: 34px;
+            margin-bottom: 12px;
+        }
+
+        .section-description {
+            text-align: center;
+            color: var(--text);
+            max-width: 650px;
+            margin: 0 auto 40px;
+        }
+
+        .about {
+            max-width: 900px;
+            margin: auto;
+            text-align: center;
+        }
+
+        .about p {
+            color: var(--text);
+            margin-bottom: 15px;
+        }
+
+        .services {
+            background: var(--light);
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+            max-width: 1150px;
+            margin: auto;
+        }
+
+        .card {
+            background: white;
+            padding: 28px;
+            border-radius: 14px;
+            border: 1px solid #e8e9f4;
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 12px 30px #24205d12;
+            border-color: #c6bfff;
+        }
+
+        .icon {
+            font-size: 36px;
+            margin-bottom: 15px;
+        }
+
+        .card h3 {
+            margin-bottom: 12px;
+            font-size: 20px;
+        }
+
+        .card p {
+            color: var(--text);
+            font-size: 15px;
+        }
+
+        .why {
+            background: var(--dark);
+            color: white;
+        }
+
+        .why .section-description {
+            color: #c1c9d8;
+        }
+
+        .why .card {
+            background: #222e45;
+            border-color: #35425b;
+        }
+
+        .why .card p {
+            color: #c1c9d8;
+        }
+
+        .contact {
+            background: linear-gradient(135deg, #f3f0ff, #e8fffb);
+        }
+
+        .contact-box {
+            max-width: 700px;
+            margin: auto;
+            text-align: center;
+            background: white;
+            padding: 40px 25px;
+            border-radius: 18px;
+            box-shadow: 0 10px 30px #1720330b;
+        }
+
+        .contact-box p {
+            color: var(--text);
+            margin: 15px 0 25px;
+        }
+
+        .contact-form {
+            display: grid;
+            gap: 14px;
+            margin-top: 25px;
+            text-align: left;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 13px;
+            border: 1px solid #d8dce7;
+            border-radius: 8px;
+            font: inherit;
+        }
+
+        .contact-form textarea {
+            min-height: 110px;
+            resize: vertical;
+        }
+
+        .form-note {
+            font-size: 12px;
+            color: var(--text);
+        }
+
+        footer {
+            padding: 25px 8%;
+            text-align: center;
+            background: #101728;
+            color: #c1c9d8;
+            font-size: 14px;
+        }
+
+        @media (max-width: 800px) {
+            header {
+                padding: 16px 5%;
+                flex-direction: column;
+                gap: 12px;
+            }
+
+            nav {
+                justify-content: center;
+                flex-wrap: wrap;
+                gap: 15px;
+            }
+
+            .grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            section {
+                padding: 60px 5%;
+            }
+
+            .hero {
+                padding: 75px 5%;
+                min-height: 500px;
+            }
+        }
+
+        @media (max-width: 520px) {
+            .grid {
+                grid-template-columns: 1fr;
+            }
+
+            h1 {
+                font-size: 40px;
+            }
+
+            .hero p {
+                font-size: 16px;
+            }
+
+            .section-heading {
+                font-size: 28px;
+            }
+
+            .contact-box {
+                padding: 28px 18px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <header>
+        <a href="#home" class="logo">SVR <span>EdTech</span></a>
+
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#services">Services</a>
+            <a href="#why-us">Why Us</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <span class="tag">EDUCATION • LEARNING • GROWTH</span>
+
+            <h1>Learn Today.<br>
+                <span>Grow Tomorrow.</span>
+            </h1>
+
+            <p>
+                Welcome to SVR EdTech. Discover learning opportunities,
+                develop valuable skills, and take the next step toward
+                your educational and professional goals.
+            </p>
+
+            <a href="#services" class="button">Explore Services</a>
+            <a href="#contact" class="button button-outline">
+                Get in Touch
+            </a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <h2 class="section-heading">About SVR EdTech</h2>
+
+        <p class="section-description">
+            Supporting learning and professional development through
+            education-focused services.
+        </p>
+
+        <div class="about">
+            <p>
+                SVR EdTech Pvt. Ltd. is presented here as an
+                education and technology-focused brand.
+                This website provides an overview of its learning
+                services and opportunities.
+            </p>
+
+            <p>
+                Our goal is to help learners explore educational
+                resources, develop practical knowledge, and prepare
+                for future opportunities.
+            </p>
+
+            <p>
+                Company history, official business activities,
+                achievements, and registration details should be
+                added here after verification.
+            </p>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services" id="services">
+        <h2 class="section-heading">Our Services</h2>
+
+        <p class="section-description">
+            Example service categories — customise these to match
+            SVR EdTech's actual offerings.
+        </p>
+
+        <div class="grid">
+
+            <div class="card">
+                <div class="icon">📚</div>
+                <h3>Online Learning</h3>
+                <p>
+                    Educational resources and learning opportunities
+                    to help learners expand their knowledge.
+                </p>
+            </div>
+
+            <div class="card">
+                <div class="icon">💻</div>
+                <h3>Digital Skills</h3>
+                <p>
+                    Learn about digital tools and technology
+                    relevant to modern workplaces.
+                </p>
+            </div>
+
+            <div class="card">
+                <div class="icon">🎯</div>
+                <h3>Career Development</h3>
+                <p>
+                    Explore professional development resources
+                    and prepare for career opportunities.
+                </p>
+            </div>
+
+            <div class="card">
+                <div class="icon">📈</div>
+                <h3>Skill Development</h3>
+                <p>
+                    Build knowledge and practical skills
+                    through structured learning activities.
+                </p>
+            </div>
+
+            <div class="card">
+                <div class="icon">🤝</div>
+                <h3>Learning Support</h3>
+                <p>
+                    Discover resources and guidance that can
+                    support your educational journey.
+                </p>
+            </div>
+
+            <div class="card">
+                <div class="icon">🌐</div>
+                <h3>Digital Education</h3>
+                <p>
+                    Explore technology-enabled learning
+                    and online educational resources.
+                </p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Why Choose Us -->
+    <section class="why" id="why-us">
+        <h2 class="section-heading">Why Explore SVR EdTech?</h2>
+
+        <p class="section-description">
+            Key areas to highlight once the company's actual
+            strengths and services have been confirmed.
+        </p>
+
+        <div class="grid">
+
+            <div class="card">
+                <div class="icon">🚀</div>
+                <h3>Growth Mindset</h3>
+                <p>
+                    Encourage continuous learning and
+                    personal development.
+                </p>
+            </div>
+
+            <div class="card">
+                <div class="icon">🧠</div>
+                <h3>Knowledge Building</h3>
+                <p>
+                    Focus on developing knowledge and
+                    understanding useful concepts.
+                </p>
+            </div>
+
+            <div class="card">
+                <div class="icon">🌟</div>
+                <h3>Future Opportunities</h3>
+                <p>
+                    Explore pathways for further education
+                    and professional development.
+                </p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <h2 class="section-heading">Contact Us</h2>
+
+        <p class="section-description">
+            Have a question? Send an enquiry.
+        </p>
+
+        <div class="contact-box">
+            <h3>Connect with SVR EdTech</h3>
+
+            <p>
+                Enter your details and prepare an enquiry email.
+            </p>
+
+            <form class="contact-form" id="contactForm">
+                <input
+                    type="text"
+                    id="name"
+                    placeholder="Your name"
+                    required>
+
+                <input
+                    type="email"
+                    id="email"
+                    placeholder="Your email address"
+                    required>
+
+                <textarea
+                    id="message"
+                    placeholder="Write your enquiry"
+                    required></textarea>
+
+                <button type="submit" class="button">
+                    Prepare Email
+                </button>
+
+                <p class="form-note">
+                    Demo contact form. Configure a verified company
+                    email address before publishing.
+                </p>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>
+            &copy; <span id="year"></span> SVR EdTech.
+            Website demonstration.
+        </p>
+    </footer>
+
+    <script>
+        // Automatically update the copyright year
+        document.getElementById("year").textContent =
+            new Date().getFullYear();
+
+        // Prepare an email using the visitor's default email application
+        document.getElementById("contactForm").addEventListener(
+            "submit",
+            function (event) {
+                event.preventDefault();
+
+                const name =
+                    document.getElementById("name").value.trim();
+
+                const email =
+                    document.getElementById("email").value.trim();
+
+                const message =
+                    document.getElementById("message").value.trim();
+
+                if (!name || !email || !message) {
+                    alert("Please complete all fields.");
+                    return;
+                }
+
+                // Replace this with SVR EdTech's verified email.
+                const companyEmail = "YOUR-COMPANY-EMAIL@example.com";
+
+                if (
+                    companyEmail ===
+                    "YOUR-COMPANY-EMAIL@example.com"
+                ) {
+                    alert(
+                        "The website owner must add a verified " +
+                        "company email address to activate enquiries."
+                    );
+                    return;
+                }
+
+                const subject = encodeURIComponent(
+                    "Website enquiry from " + name
+                );
+
+                const body = encodeURIComponent(
+                    "Name: " + name +
+                    "\nEmail: " + email +
+                    "\n\nMessage:\n" + message
+                );
+
+                window.location.href =
+                    "mailto:" + companyEmail +
+                    "?subject=" + subject +
+                    "&body=" + body;
+            }
+        );
+    </script>
+
+</body>
+</html>
